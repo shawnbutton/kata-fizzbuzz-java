@@ -1,4 +1,11 @@
-.idea/
-build/
-.gradle/
+.idea/*
+target/*
+build/*
+.gradle/*
+.settings/*
+.classpath
+.project
+.factorypath
+.attach_pid*
+.vscode
 
