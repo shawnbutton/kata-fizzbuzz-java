@@ -1,28 +1,26 @@
 public class FizzBuzz {
   public String say(int number) {
 
-    if (number ==0) throw new RuntimeException();
+    assert (number != 0);
 
+    String whatToSay = checkForFizzAndBuzz(number);
+
+    if (whatToSay.isEmpty()) whatToSay = String.valueOf(number);
+
+    return whatToSay;
+  }
+
+  private String checkForFizzAndBuzz(int number) {
     StringBuffer whatToSay = new StringBuffer();
 
-    if (isDivisibleBy3(number)) whatToSay.append("fizz");
+    if (isDivisibleBy(number, 3)) whatToSay.append("fizz");
 
-    if (isDivisibleBy5(number)) whatToSay.append("buzz");
-
-    if (isEmpty(whatToSay)) return String.valueOf(number);
+    if (isDivisibleBy(number, 5)) whatToSay.append("buzz");
 
     return whatToSay.toString();
   }
 
-  private boolean isEmpty(StringBuffer whatToSay) {
-    return whatToSay.toString().isEmpty();
-  }
-
-  private boolean isDivisibleBy5(int number) {
-    return number % 5 == 0;
-  }
-
-  private boolean isDivisibleBy3(int number) {
-    return number % 3 == 0;
+  private boolean isDivisibleBy(int number, int divisibleBy) {
+    return number % divisibleBy == 0;
   }
 }

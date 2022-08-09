@@ -57,7 +57,7 @@ public class FizzBuzzTest {
     try {
       fizzBuzz.say(0);
       fail("Should have thrown an exception");
-    } catch (Exception ex) {
+    } catch (AssertionError ex) {
       //expected exception
     }
   }
